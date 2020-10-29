@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hair_dryer_modification_project;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -13,34 +9,35 @@ import java.util.Scanner;
  */
 public class User extends Hair_Dryer_Modification_Project {
     
-    private Integer selection; 
+    private String username;
+    private String password;
+    private Integer hair_type;
 
-    public User(Integer selection) { //constructor with arguments
-        this.selection = selection;
+    public User (String username, String password, Integer hair_type)
+    {
+        this.username = username;
+        this.password = password;
+        this.hair_type = hair_type;
     }
+
+    String getUsername() {
+        return username;}
+    
+    String getPassword() {
+        return password;}
+
+    public Integer getHair_type() {
+        return hair_type;
+    }
+    
     public User (){ // empty constructor
     }
     
-    public Integer getSelection() {
-        return selection;
-    }
     
-    public void UserData(){
-    
-        System.out.println("Welcome to smart Hair Dryer!"); // Greeting
-        System.out.print("Please enter your full name: ");
-        Scanner scan = new Scanner(System.in);
-        String name = scan.nextLine();
-        System.out.print("Welcome " + name + "!");
+    public void UserData(Integer hairtype) throws IOException {
+        this.hair_type = hairtype;
         
-        System.out.println("\nPlease cheack your hair type: " // user selects what hair type they have
-				+ "\n1.Frizzy"
-				+ "\n2.Straight"
-				+ "\n3.Curly");
-        Scanner scanner = new Scanner(System.in);
-        this.selection = scanner.nextInt(); //Input
-        
-        switch (this.selection) { // switch function switches between different hair types and their required settings. 
+        switch (hairtype) { // switch function switches between different hair types and their required settings. 
             case 1:
                 System.out.println("Your hair is Frizzy. The dryer has been modified to optimum settings for your hair"); //
                 
@@ -62,6 +59,7 @@ public class User extends Hair_Dryer_Modification_Project {
                     break;
                     default:
                     System.out.println("Invalid Input");
+                    user1.turnOffSpray();
                     break;
                  }
                 
@@ -178,13 +176,9 @@ public class User extends Hair_Dryer_Modification_Project {
                 
                 user3.wireless_charging(true, true);
                 break;
-                
-                
-            default:
-                System.out.println("Your input was not recognized.");
-                break;
         }
         
     }
+
 
 }
