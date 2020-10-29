@@ -23,6 +23,7 @@ public class Registration {
         private String password;
         Integer Hair_type; 
         private User loggedInUser;
+        static Registration Registration1 = new Registration();
 
 
     public String getUsername() {
@@ -129,8 +130,15 @@ public class Registration {
 				+ "\n3.Curly");
             Hair_type = Integer.parseInt(scan.nextLine());
             
-        listOfUsers.add(new User(username, password, Hair_type));
+        listOfUsers.add(new User(Registration1.username, Registration1.password, Registration1.Hair_type));
+        
+        
         for (User user : listOfUsers){
+            if (user.getUsername()== null) {
+            	user.setUsername(username);
+            	user.setPassword(password);
+            	user.setHair_type(Hair_type);} 
+            
         loggedInUser = user;}
         }
 }

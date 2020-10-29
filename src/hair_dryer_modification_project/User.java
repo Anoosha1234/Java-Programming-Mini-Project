@@ -29,6 +29,20 @@ public class User extends Hair_Dryer_Modification_Project {
     public Integer getHair_type() {
         return hair_type;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setHair_type(Integer hair_type) {
+        this.hair_type = hair_type;
+    }
+    
+    
     
     public User (){ // empty constructor
     }
