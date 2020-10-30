@@ -12,6 +12,7 @@ public class Registration {
     
         static Scanner Input = new Scanner(System.in);
         private String username;
+        private String password;
         static  ArrayList<User> listOfUsers = new ArrayList<User>();
         private Integer ID = 0;
         static Registration Registration1 = new Registration();
@@ -19,12 +20,37 @@ public class Registration {
         private boolean pointer = true;
 
 
-    public String getUsername() { return username;}
-    public Integer getID() { return ID;}
-    public boolean isPointer() { return pointer;}
-    public void setUsername(String username) { this.username = username;}
-    public void setID(Integer ID) { this.ID = ID;}
-    public void setPointer(boolean pointer) { this.pointer = pointer;}
+    public String getUsername() { 
+        return username;
+    }
+    
+    public String getPassword() { 
+        return password;
+    }
+    
+    public Integer getID() { 
+        return ID;
+    }
+    
+    public boolean isPointer() { 
+        return pointer;
+    }
+    
+    public void setUsername(String username) { 
+        this.username = username;
+    }
+    
+    public void setPassword(String password) { 
+        this.password = password;
+    }
+    
+    public void setID(Integer ID) { 
+        this.ID = ID;
+    }
+    
+    public void setPointer(boolean pointer) { 
+        this.pointer = pointer;
+    }
     
 
     public Registration() {
@@ -45,21 +71,30 @@ public class Registration {
         int loggedInUser = 0;
         System.out.println("Enter Username");
         Registration1.setUsername(Input.next());
+        System.out.println("Enter Password");
+        Registration1.setPassword(Input.next());
         
         for (User i : listOfUsers) {
-        	if (i.getUsername().equals(Registration1.getUsername())) {
-                System.out.println("Hello " + Registration1.getUsername());
-                loggedInUser = 1;
-                break;
-        	}
+        	if (i.getUsername().equals(Registration1.getUsername())) 
+                {
+                     if (i.getPassword().equals(Registration1.password))
+                        {
+                            System.out.println("Hello " + Registration1.getUsername());
+                            loggedInUser = 1;
+                             break;
+                 }
+            }
         }       
         if (loggedInUser == 0) {
         	
-            System.out.println("Enter Hair Type");
+            System.out.println("\nPlease cheack your hair type: " // user selects what hair type they have
+				+ "\n1.Frizzy"
+				+ "\n2.Straight"
+				+ "\n3.Curly");
             Integer hair_type = Input.nextInt();
             if (hair_type == 0) {
-            	System.out.println("Since you have entered a wrong value. Please try again");
-            	listOfUsers.add(new User(Registration1.getUsername(), Registration1.getID()));
+            	System.out.println("You have input an invalid value. Please try again");
+            	listOfUsers.add(new User(Registration1.getUsername(), Registration1.getPassword(), Registration1.getID()));
             	Registration1.setID(Registration1.getID()+1);
             }
             
@@ -68,10 +103,13 @@ public class Registration {
             i.setUsername(Registration1.getUsername());
                 return i;
             }).map((i) -> {
+                i.setPassword(Registration1.getPassword());
+                return i;
+            }).map((i) -> {
                 i.setHair_type(hair_type);
                 return i;
             }).map((i) -> {
-                System.out.println(" Hello " + i.getUsername());
+                System.out.println("Hello " + i.getUsername());
                 return i;
             }).map((i) -> {
                 i.setIndex(Registration1.getID());

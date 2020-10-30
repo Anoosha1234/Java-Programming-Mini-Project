@@ -12,17 +12,22 @@ public class User extends Hair_Dryer_Modification_Project implements java.io.Ser
     private String username = null;
     private Integer hair_type = 0;
     private Integer Index;
+    private String password = null;
 
-    public User (String username, Integer Index)
+    public User (String username, String Password, Integer Index)
     {
         this.username = username;
         this.Index = Index;
+        this.password = password;
     }
 
     String getUsername() {
         return username;}
-    
 
+    public String getPassword() {
+        return password;
+    }
+    
     public Integer getHair_type() {
         return hair_type;
     }
@@ -34,6 +39,10 @@ public class User extends Hair_Dryer_Modification_Project implements java.io.Ser
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 
