@@ -14,7 +14,6 @@ public static void main (String[] args) throws IOException {
         System.out.println("*** Welcome to the hairdryer ***\n");
         System.out.println(greeting);
         
-        Registration.UserList();
         while(Registration.Registration1.isPointer()){
         Registration.userLogin();
         Registration.User();

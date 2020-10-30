@@ -56,15 +56,6 @@ public class Registration {
     public Registration() {
     }
     
-    public static void UserList() {
-	listOfUsers.add(new User());
-        User defaultUser = listOfUsers.get(0);
-        defaultUser.setUsername("Default");
-        defaultUser.setHair_type(2);
-        defaultUser.setIndex(Registration1.getID());
-        Registration1.setID(Registration1.getID()+1);
-    }
-    
     public static void userLogin() {
         
         // Used to hold the instance of a user who successfully logged in
@@ -147,7 +138,4 @@ public class Registration {
         public static void exitMethod() {
 		System.out.println("Thank you for using me, Have a nice day!");
 	}
-    
-    
-    
 }

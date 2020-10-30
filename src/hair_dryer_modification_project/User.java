@@ -101,7 +101,7 @@ public class User extends Hair_Dryer_Modification_Project implements java.io.Ser
                          user1.play_music(true);  //plays music if input in upper-case y
                          break;
                         default:
-                         System.out.println("Input not recognized");
+                         System.out.println("Music player is turned off");
                          s0.nextLine();
                         break;
                    }
