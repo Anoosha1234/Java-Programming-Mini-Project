@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class User extends Hair_Dryer_Modification_Project implements java.io.Serializable {
     
     private String username = null;
-    private Integer hair_type = 0;
+    private Integer hair_type;
     private Integer Index;
-    private String password = null;
+    private String password;
 
     public User (String username, String Password, Integer Index)
     {
