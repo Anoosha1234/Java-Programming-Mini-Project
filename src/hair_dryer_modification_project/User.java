@@ -7,42 +7,43 @@ import java.util.Scanner;
  *
  * @author Anoosha Sajid
  */
-public class User extends Hair_Dryer_Modification_Project {
+public class User extends Hair_Dryer_Modification_Project implements java.io.Serializable {
     
-    private String username;
-    private String password;
-    private Integer hair_type;
+    private String username = null;
+    private Integer hair_type = 0;
+    private Integer Index;
 
-    public User (String username, String password, Integer hair_type)
+    public User (String username, Integer Index)
     {
         this.username = username;
-        this.password = password;
-        this.hair_type = hair_type;
+        this.Index = Index;
     }
 
     String getUsername() {
         return username;}
     
-    String getPassword() {
-        return password;}
 
     public Integer getHair_type() {
         return hair_type;
     }
 
+    public Integer getIndex() {
+        return Index;
+    }
+    
+
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public void setHair_type(Integer hair_type) {
         this.hair_type = hair_type;
     }
-    
-    
+
+    public void setIndex(Integer Index) {
+        this.Index = Index;
+    }
     
     public User (){ // empty constructor
     }
@@ -73,7 +74,7 @@ public class User extends Hair_Dryer_Modification_Project {
                     break;
                     default:
                     System.out.println("Invalid Input");
-                    user1.turnOffSpray();
+                    scn.nextLine();
                     break;
                  }
                 
@@ -91,7 +92,8 @@ public class User extends Hair_Dryer_Modification_Project {
                          user1.play_music(true);  //plays music if input in upper-case y
                          break;
                         default:
-                         user1.play_music(false); // does not play music
+                         System.out.println("Input not recognized");
+                         s0.nextLine();
                         break;
                    }
                 
@@ -121,6 +123,7 @@ public class User extends Hair_Dryer_Modification_Project {
                     break;
                     default:
                     System.out.println("Invalid Input");
+                    scn1.nextLine();
                     break;
                  }
                 
@@ -138,7 +141,7 @@ public class User extends Hair_Dryer_Modification_Project {
                          user2.play_music(true);
                          break;
                         default:
-                         user2.play_music(false);
+                         s.nextLine();
                         break;
                    }
                     
@@ -167,6 +170,7 @@ public class User extends Hair_Dryer_Modification_Project {
                     break;
                     default:
                     System.out.println("Invalid Input");
+                    scn2.nextLine();
                     break;
                  }
                 
@@ -184,7 +188,7 @@ public class User extends Hair_Dryer_Modification_Project {
                          user3.play_music(true);
                          break;
                         default:
-                         user3.play_music(false);
+                         s1.nextLine();
                         break;
                    }
                 

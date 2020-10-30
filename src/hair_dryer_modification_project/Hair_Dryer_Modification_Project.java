@@ -54,6 +54,7 @@ public class Hair_Dryer_Modification_Project implements Serializable {
                 break;
             default:
                 System.out.println("Your dryer input was not recognized.");
+                
                 break;
         }
     }
@@ -94,6 +95,7 @@ public class Hair_Dryer_Modification_Project implements Serializable {
      * @param dryness_level
      */
     public void progressMonitor(Integer dryness_level) {  // dryer interacts with the customer and asks how dry their hair is
+        
         System.out.println("please write your current dryer progress between 1 to 100. 100 being the dryest."); //
         Scanner scanner = new Scanner(System.in);
         dryness_level = scanner.nextInt();
@@ -154,7 +156,7 @@ public class Hair_Dryer_Modification_Project implements Serializable {
                 this.massage_levels = "Invalid Input";
                 break;
         }
-        System.out.println(massage_levels); // output massage level 1 as standard output
+        System.out.println(massage_levels); // output massage level
     }
 
     public boolean isBluetooth_connection() {
