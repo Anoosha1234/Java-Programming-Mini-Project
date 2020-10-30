@@ -102,7 +102,7 @@ public class Registration {
 	}
         
         public static void exitMessage() {
-		System.out.println("You look pretty, Have a nice day!");
+		System.out.println("Thank you for using me, Have a nice day!");
 	}
     
     
