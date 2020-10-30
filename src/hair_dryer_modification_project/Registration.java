@@ -85,6 +85,8 @@ public class Registration {
                  }
             }
         }       
+        
+        // if loggedInUser was changed from 0 , it was successful
         if (loggedInUser == 0) {
         	
             System.out.println("\nPlease cheack your hair type: " // user selects what hair type they have
@@ -132,14 +134,17 @@ public class Registration {
 		User1.UserData(CurrentUser.getHair_type());
 	}
         
-        public static void continueMessage() {
+    /**
+     * To iterate from Array list
+     */
+    public static void iteration() {
 		System.out.println("Press 0 to exit, 1 to continue as another User:");
 		if(Input.nextInt()== 0) {
                     Registration1.setPointer(false);
                     }
 	}
         
-        public static void exitMessage() {
+        public static void exitMethod() {
 		System.out.println("Thank you for using me, Have a nice day!");
 	}
     
